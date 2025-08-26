@@ -1,0 +1,317 @@
+.fhe-counter-demo {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-2xl);
+  padding: 2rem;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-md);
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+}
+
+.fhe-counter-demo.loading,
+.fhe-counter-demo.error {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.demo-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 1.5rem;
+}
+
+.demo-header h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+}
+
+.demo-header p {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.contract-info small {
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+}
+
+.demo-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.count-display {
+  background: var(--bg-muted);
+  border: 1px solid var(--border-light);
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem;
+}
+
+.count-section {
+  margin-bottom: 16px;
+}
+
+.count-section:last-child {
+  margin-bottom: 0;
+}
+
+.count-section label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.count-value {
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  padding: 0.75rem 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.count-value.encrypted {
+  color: var(--error-color);
+  border-left: 3px solid var(--error-color);
+}
+
+.count-value.decrypted {
+  color: var(--success-color);
+  border-left: 3px solid var(--success-color);
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.count-value.current {
+  color: var(--accent-color);
+  border-left: 3px solid var(--accent-color);
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.stats-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.stat-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--border-radius-lg);
+  padding: 1rem;
+  text-align: center;
+}
+
+.stat-item label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.stat-item span {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--success-color);
+}
+
+.tx-section {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
+  text-align: center;
+}
+
+.tx-section label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.tx-link {
+  color: var(--info-color);
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  transition: color var(--transition-normal);
+}
+
+.tx-link:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.demo-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.control-group {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.control-group button {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  font-weight: 600;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  font-family: 'Inter', sans-serif;
+}
+
+.btn-refresh {
+  background: var(--info-color);
+  color: var(--text-light);
+  border: none;
+}
+
+.btn-refresh:hover:not(:disabled) {
+  background: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-decrypt {
+  background: var(--warning-color);
+  color: var(--text-light);
+  border: none;
+}
+
+.btn-decrypt:hover:not(:disabled) {
+  background: #d97706;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-increment {
+  background: var(--success-color);
+  color: var(--text-light);
+  border: none;
+}
+
+.btn-increment:hover:not(:disabled) {
+  background: #059669;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-decrement {
+  background: var(--error-color);
+  color: var(--text-light);
+  border: none;
+}
+
+.btn-decrement:hover:not(:disabled) {
+  background: #dc2626;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-etherscan {
+  background: var(--accent-color);
+  color: var(--text-light);
+  border: none;
+}
+
+.btn-etherscan:hover:not(:disabled) {
+  background: #7c3aed;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-accent);
+}
+
+.btn-network {
+  background: var(--error-color);
+  color: var(--text-light);
+  border: none;
+}
+
+.btn-network:hover:not(:disabled) {
+  background: #dc2626;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.status-message {
+  text-align: center;
+  padding: 1rem;
+  background: var(--bg-accent);
+  border: 1px solid var(--border-light);
+  border-radius: var(--border-radius-lg);
+  margin-top: auto;
+}
+
+.status-message span {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.status-message .processing {
+  color: var(--warning-color);
+  animation: pulse 2s infinite;
+}
+
+.status-message .ready {
+  color: var(--success-color);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@media (max-width: 768px) {
+  .fhe-counter-demo {
+    padding: 16px;
+    min-height: 400px;
+  }
+  
+  .demo-header h3 {
+    font-size: 1.4rem;
+  }
+  
+  .control-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .control-group button {
+    min-height: 48px;
+  }
+}

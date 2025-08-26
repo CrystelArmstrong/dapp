@@ -1,0 +1,9 @@
+{
+  "SimpleCounter": "0xc2a687421268BdB9e3B857c52FAc4d7FF11487fb",
+  "deployer": "0x8bf616b36bf4484A2c801207349A10EcDF723476",
+  "network": "sepolia",
+  "chainId": 11155111,
+  "timestamp": "2025-08-24T20:46:46.997Z",
+  "txHash": "0x159335e4f76320859aa831ab584245d42e77c6767bbd2cf77dd39743f3da54e0",
+  "etherscanUrl": "https://sepolia.etherscan.io/address/0xc2a687421268BdB9e3B857c52FAc4d7FF11487fb"
+}

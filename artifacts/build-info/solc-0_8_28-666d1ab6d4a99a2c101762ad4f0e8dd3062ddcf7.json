@@ -1,0 +1,39 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_28-666d1ab6d4a99a2c101762ad4f0e8dd3062ddcf7",
+  "solcVersion": "0.8.28",
+  "solcLongVersion": "0.8.28+commit.7893614a",
+  "userSourceNameMap": {
+    "contracts/SimpleCounter.sol": "project/contracts/SimpleCounter.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "cancun",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers",
+            "metadata"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/SimpleCounter.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.28;\r\n\r\n/**\r\n * @title SimpleCounter - A counter contract for testing MetaMask interactions\r\n * @dev This contract simulates FHE functionality for demonstration on Sepolia testnet\r\n * Since Sepolia doesn't support actual FHE operations, we simulate the interface\r\n */\r\ncontract SimpleCounter {\r\n    uint256 private count;\r\n    address public owner;\r\n    \r\n    mapping(address => uint256) public userOperations;\r\n    uint256 public totalOperations;\r\n    \r\n    event CounterIncremented(address indexed user, uint256 newCount, uint256 timestamp);\r\n    event CounterDecremented(address indexed user, uint256 newCount, uint256 timestamp);\r\n    event CounterReset(address indexed admin, uint256 timestamp);\r\n\r\n    constructor() {\r\n        owner = msg.sender;\r\n        count = 0;\r\n    }\r\n\r\n    modifier onlyOwner() {\r\n        require(msg.sender == owner, \"Only owner can call this function\");\r\n        _;\r\n    }\r\n\r\n    /**\r\n     * @dev Increment the counter (simulating FHE encrypted increment)\r\n     * @param encryptedValue - Simulated encrypted value (ignored for demo)\r\n     * @param inputProof - Simulated proof (ignored for demo)\r\n     */\r\n    function increment(bytes32 encryptedValue, bytes calldata inputProof) external {\r\n        // In real FHE, this would process encrypted values\r\n        // For Sepolia demo, we just increment by 1\r\n        count += 1;\r\n        userOperations[msg.sender] += 1;\r\n        totalOperations += 1;\r\n        \r\n        emit CounterIncremented(msg.sender, count, block.timestamp);\r\n    }\r\n\r\n    /**\r\n     * @dev Decrement the counter (simulating FHE encrypted decrement)\r\n     * @param encryptedValue - Simulated encrypted value (ignored for demo)\r\n     * @param inputProof - Simulated proof (ignored for demo)\r\n     */\r\n    function decrement(bytes32 encryptedValue, bytes calldata inputProof) external {\r\n        // In real FHE, this would process encrypted values\r\n        // For Sepolia demo, we just decrement by 1\r\n        require(count > 0, \"Counter cannot go below zero\");\r\n        count -= 1;\r\n        userOperations[msg.sender] += 1;\r\n        totalOperations += 1;\r\n        \r\n        emit CounterDecremented(msg.sender, count, block.timestamp);\r\n    }\r\n\r\n    /**\r\n     * @dev Get the current count (in real FHE, this would return encrypted handle)\r\n     */\r\n    function getCount() external view returns (uint256) {\r\n        // In real FHE implementation, this would return an encrypted handle\r\n        // For Sepolia demo, we return the actual count for visibility\r\n        return count;\r\n    }\r\n\r\n    /**\r\n     * @dev Get counter statistics\r\n     */\r\n    function getStats() external view returns (\r\n        uint256 currentCount,\r\n        uint256 totalOps,\r\n        uint256 userOps\r\n    ) {\r\n        return (count, totalOperations, userOperations[msg.sender]);\r\n    }\r\n\r\n    /**\r\n     * @dev Reset counter (owner only)\r\n     */\r\n    function reset() external onlyOwner {\r\n        count = 0;\r\n        emit CounterReset(msg.sender, block.timestamp);\r\n    }\r\n\r\n    /**\r\n     * @dev Get the contract info for UI display\r\n     */\r\n    function getContractInfo() external view returns (\r\n        string memory name,\r\n        string memory version,\r\n        address contractOwner,\r\n        uint256 deploymentTime\r\n    ) {\r\n        return (\r\n            \"SimpleCounter (FHE Demo)\",\r\n            \"1.0.0\",\r\n            owner,\r\n            block.timestamp\r\n        );\r\n    }\r\n}"
+      }
+    }
+  }
+}

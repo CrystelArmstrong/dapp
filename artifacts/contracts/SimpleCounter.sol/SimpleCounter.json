@@ -1,0 +1,240 @@
+{
+  "_format": "hh3-artifact-1",
+  "contractName": "SimpleCounter",
+  "sourceName": "contracts/SimpleCounter.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newCount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "CounterDecremented",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newCount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "CounterIncremented",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "admin",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "CounterReset",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "encryptedValue",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "inputProof",
+          "type": "bytes"
+        }
+      ],
+      "name": "decrement",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getContractInfo",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "version",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "contractOwner",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "deploymentTime",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getStats",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "currentCount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "totalOps",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "userOps",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "encryptedValue",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "inputProof",
+          "type": "bytes"
+        }
+      ],
+      "name": "increment",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "reset",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalOperations",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "userOperations",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080604052348015600e575f5ffd5b50600180546001600160a01b031916331790555f8055610572806100315f395ff3fe608060405234801561000f575f5ffd5b5060043610610090575f3560e01c8063a87d942c11610063578063a87d942c14610174578063c59d48471461017b578063d826f88f146101b1578063e055f8f9146101b9578063ed232029146101cc575f5ffd5b80633a0d17b2146100945780635941195d146100c65780637cc1f867146100db5780638da5cb5b14610149575b5f5ffd5b6100b36100a23660046103e9565b60026020525f908152604090205481565b6040519081526020015b60405180910390f35b6100d96100d4366004610416565b6101d5565b005b600154604080518082018252601881527f53696d706c65436f756e74657220284648452044656d6f290000000000000000602080830191909152825180840190935260058352640312e302e360dc1b90830152916001600160a01b0316426040516100bd94939291906104bb565b60015461015c906001600160a01b031681565b6040516001600160a01b0390911681526020016100bd565b5f546100b3565b6101965f805460035433835260026020526040909220549092565b604080519384526020840192909252908201526060016100bd565b6100d961026a565b6100d96101c7366004610416565b61030d565b6100b360035481565b60015f5f8282546101e69190610510565b9091555050335f90815260026020526040812080546001929061020a908490610510565b92505081905550600160035f8282546102239190610510565b90915550505f546040805191825242602083015233917f28884a5c2be2a20897b0d0e22457dbee83e74ff19dad34b1937893a98f83f95491015b60405180910390a2505050565b6001546001600160a01b031633146102d35760405162461bcd60e51b815260206004820152602160248201527f4f6e6c79206f776e65722063616e2063616c6c20746869732066756e6374696f6044820152603760f91b60648201526084015b60405180910390fd5b5f805560405142815233907f0c4f92d0724fb3d16c74d6fd66f78fe790dbfb5849f7691e9931db60bb64aad49060200160405180910390a2565b5f5f541161035d5760405162461bcd60e51b815260206004820152601c60248201527f436f756e7465722063616e6e6f7420676f2062656c6f77207a65726f0000000060448201526064016102ca565b60015f5f82825461036e9190610529565b9091555050335f908152600260205260408120805460019290610392908490610510565b92505081905550600160035f8282546103ab9190610510565b90915550505f546040805191825242602083015233917f9bb01462f09d9cfcea3420f708d93273f6249dabf20f3297880ed1ce9f9d47d7910161025d565b5f602082840312156103f9575f5ffd5b81356001600160a01b038116811461040f575f5ffd5b9392505050565b5f5f5f60408486031215610428575f5ffd5b83359250602084013567ffffffffffffffff811115610445575f5ffd5b8401601f81018613610455575f5ffd5b803567ffffffffffffffff81111561046b575f5ffd5b86602082840101111561047c575f5ffd5b939660209190910195509293505050565b5f81518084528060208401602086015e5f602082860101526020601f19601f83011685010191505092915050565b608081525f6104cd608083018761048d565b82810360208401526104df818761048d565b6001600160a01b0395909516604084015250506060015292915050565b634e487b7160e01b5f52601160045260245ffd5b80820180821115610523576105236104fc565b92915050565b81810381811115610523576105236104fc56fea26469706673582212207ff660fd1d4bac8b180c0e4b5259bdf2a737f58d47debfe1cd386fef9d3f2add64736f6c634300081c0033",
+  "deployedBytecode": "0x608060405234801561000f575f5ffd5b5060043610610090575f3560e01c8063a87d942c11610063578063a87d942c14610174578063c59d48471461017b578063d826f88f146101b1578063e055f8f9146101b9578063ed232029146101cc575f5ffd5b80633a0d17b2146100945780635941195d146100c65780637cc1f867146100db5780638da5cb5b14610149575b5f5ffd5b6100b36100a23660046103e9565b60026020525f908152604090205481565b6040519081526020015b60405180910390f35b6100d96100d4366004610416565b6101d5565b005b600154604080518082018252601881527f53696d706c65436f756e74657220284648452044656d6f290000000000000000602080830191909152825180840190935260058352640312e302e360dc1b90830152916001600160a01b0316426040516100bd94939291906104bb565b60015461015c906001600160a01b031681565b6040516001600160a01b0390911681526020016100bd565b5f546100b3565b6101965f805460035433835260026020526040909220549092565b604080519384526020840192909252908201526060016100bd565b6100d961026a565b6100d96101c7366004610416565b61030d565b6100b360035481565b60015f5f8282546101e69190610510565b9091555050335f90815260026020526040812080546001929061020a908490610510565b92505081905550600160035f8282546102239190610510565b90915550505f546040805191825242602083015233917f28884a5c2be2a20897b0d0e22457dbee83e74ff19dad34b1937893a98f83f95491015b60405180910390a2505050565b6001546001600160a01b031633146102d35760405162461bcd60e51b815260206004820152602160248201527f4f6e6c79206f776e65722063616e2063616c6c20746869732066756e6374696f6044820152603760f91b60648201526084015b60405180910390fd5b5f805560405142815233907f0c4f92d0724fb3d16c74d6fd66f78fe790dbfb5849f7691e9931db60bb64aad49060200160405180910390a2565b5f5f541161035d5760405162461bcd60e51b815260206004820152601c60248201527f436f756e7465722063616e6e6f7420676f2062656c6f77207a65726f0000000060448201526064016102ca565b60015f5f82825461036e9190610529565b9091555050335f908152600260205260408120805460019290610392908490610510565b92505081905550600160035f8282546103ab9190610510565b90915550505f546040805191825242602083015233917f9bb01462f09d9cfcea3420f708d93273f6249dabf20f3297880ed1ce9f9d47d7910161025d565b5f602082840312156103f9575f5ffd5b81356001600160a01b038116811461040f575f5ffd5b9392505050565b5f5f5f60408486031215610428575f5ffd5b83359250602084013567ffffffffffffffff811115610445575f5ffd5b8401601f81018613610455575f5ffd5b803567ffffffffffffffff81111561046b575f5ffd5b86602082840101111561047c575f5ffd5b939660209190910195509293505050565b5f81518084528060208401602086015e5f602082860101526020601f19601f83011685010191505092915050565b608081525f6104cd608083018761048d565b82810360208401526104df818761048d565b6001600160a01b0395909516604084015250506060015292915050565b634e487b7160e01b5f52601160045260245ffd5b80820180821115610523576105236104fc565b92915050565b81810381811115610523576105236104fc56fea26469706673582212207ff660fd1d4bac8b180c0e4b5259bdf2a737f58d47debfe1cd386fef9d3f2add64736f6c634300081c0033",
+  "linkReferences": {},
+  "deployedLinkReferences": {},
+  "immutableReferences": {},
+  "inputSourceName": "project/contracts/SimpleCounter.sol",
+  "buildInfoId": "solc-0_8_28-666d1ab6d4a99a2c101762ad4f0e8dd3062ddcf7"
+}
